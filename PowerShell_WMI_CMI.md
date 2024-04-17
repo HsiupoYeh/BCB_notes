@@ -99,10 +99,17 @@ PowerShell "Get-Command | Where-Object { $_.name -eq 'Get-CimInstance' } | Selec
 
 <br>
 
+## 範例 - 取得Serial port裝置(COM Ports)
+### 預設資訊(非全部)
++ Get-WMIObject:
+  ```
+  PowerShell "Get-WMIObject -Class Win32_PnPEntity"
+  ```
++ Get-CimInstance:
+  ```
+  PowerShell "Get-CimInstance -Class Win32_PnPEntity"
+  ```
 
-# 取得COM Ports 裝置
-### 全部
-PowerShell "Get-CimInstance -Class Win32_PnPEntity | Format-List *"
 ### 滿足物件「PNPClass」內有「Ports」
 PowerShell "Get-CimInstance -Class Win32_PnPEntity | Where-Object PNPClass -Like 'Ports'"
 ### 只查看Name
