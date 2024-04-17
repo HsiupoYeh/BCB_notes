@@ -109,9 +109,15 @@ PowerShell "Get-Command | Where-Object { $_.name -eq 'Get-CimInstance' } | Selec
   ```
   PowerShell "Get-CimInstance -Class Win32_PnPEntity"
   ```
-
-### 滿足物件「PNPClass」內有「Ports」
-PowerShell "Get-CimInstance -Class Win32_PnPEntity | Where-Object PNPClass -Like 'Ports'"
+### 使用Where-Object檢查物件「PNPClass」符合「Ports」的內容
++ Get-WMIObject:
+  ```
+  PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.pnpclass -eq 'Ports' }"
+  ```
++ Get-CimInstance:
+  ```
+  PowerShell "Get-CimInstance -Class Win32_PnPEntity | Where-Object { $_.pnpclass -eq 'Ports' }"
+  ```
 ### 只查看Name
 PowerShell "Get-CimInstance -Class Win32_PnPEntity | Where-Object PNPClass -Like 'Ports' | Select-Object Name"
 ### 調整顯示模式
