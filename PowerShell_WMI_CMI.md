@@ -61,7 +61,14 @@ PowerShell "Get-Command | Where-Object { $_.name -eq 'Get-CimInstance' } | Selec
   PowerShell "Get-CimInstance -Class Win32_OperatingSystem"
   ```
 ### 調整顯示模式
-PowerShell "Get-CimInstance -ClassName Win32_OperatingSystem | Format-List"
++ Get-WMIObject:
+  ```
+  PowerShell "Get-WMIObject -Class Win32_OperatingSystem | Format-List"
+  ```
++ Get-CimInstance:
+  ```
+  PowerShell "Get-CimInstance -Class Win32_OperatingSystem | Format-List"
+  ```
 ### 顯示全部
 PowerShell "Get-CimInstance -ClassName Win32_OperatingSystem | Format-List *"
 ### 顯示標題
