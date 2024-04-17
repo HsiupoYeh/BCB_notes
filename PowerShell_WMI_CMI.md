@@ -3,7 +3,8 @@
   + Windows7就是舊版PowerShell。
   + Windows10部分仍保留舊版PowerShell呼叫方式。
   + 新版Powershell請改用CIM Cmdlet。
-## 解決方案
+ 
+### 解決方案
 + 先檢查PowerShell支援狀態:
   + 目標WMI命令: Get-WMIObject
   + 目標CIM命令: Get-CimInstance
@@ -28,6 +29,7 @@ PowerShell "Get-Command | Where-Object { $_.name -eq 'Get-WMIObject' } | Select-
   + 能用的話就是會顯示名稱
   + 不能用的話就是沒有任何內容顯示。
 
+
 #### Get-CimInstance
 + 使用Where-Object檢查符合「Name」的命令(Get-CimInstance)
 ```
@@ -44,11 +46,20 @@ PowerShell "Get-Command | Where-Object { $_.name -eq 'Get-CimInstance' } | Selec
 + 接下來透過對內容的檢查就可以知道「Get-WMIObject」命令能不能用。
   + 能用的話就是會顯示名稱
   + 不能用的話就是沒有任何內容顯示。
- 
-+ 
-# 取得作業系統版本
-### 精簡
-PowerShell "Get-CimInstance -ClassName Win32_OperatingSystem"
+ + 確定可以用之後，就選一個可用的來進行後面操作
+
+<br>
+
+## 範例 - 取得作業系統版本
+### 預設資訊(非全部)
++ Get-WMIObject:
+  ```
+  PowerShell "Get-WMIObject -ClassName Win32_OperatingSystem"
+  ```
++ Get-CimInstance:
+  ```
+  PowerShell "Get-CimInstance -ClassName Win32_OperatingSystem"
+  ```
 ### 調整顯示模式
 PowerShell "Get-CimInstance -ClassName Win32_OperatingSystem | Format-List"
 ### 顯示全部
