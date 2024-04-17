@@ -141,3 +141,42 @@ StatusBar1->Panels->Items[0]->Width=temp_remain_width;
 //--
 }
 ```
+
+> (7.1) 拖拉一個「TPageControl」到「Form1」中。預設名稱會是「PageControl1」。  
+>> (7.2) 設定「PageControl1」的「Properties」頁面下「Align」選為「alClient」。  
+
+>> (7.3) 用右鍵新增頁面，可以先新增個10頁之後再刪掉不要用的。
+
+>> (7.4) 把新增的第1頁TabPage1->properties->Caption=運行紀錄。  
+>>> (7.4.1) 放上一個TMemo。改名為Log_Memo。 
+```
+Log_Memo->properties->Align=AlClient。
+
+Log_Memo->properties->Lines清空。
+
+Log_Memo->properties->Name=Log_Memo。
+
+Log_Memo->properties->ReadOnly=true。
+
+Log_Memo->properties->ScrollBars=ssBoth。
+
+10.4.2 放上一個TMemo。改名為CammaText_Memo。
+
+Log_Memo->properties->Name=CammaText_Memo。
+
+Log_Memo->properties->Visible=false。
+```
+
+>> (10.5)把新增的第2頁TabPage2->properties->Caption=更新紀錄。  
+>>> (10.5.1) 放上一個TMemo。改名為Update_Memo。  
+```
+Update_Memo->properties->Align=AlClient。
+
+Update_Memo->properties->Lines清空後填入版本紀錄。
+
+Update_Memo->properties->Name=Update_Memo。
+
+Update_Memo->properties->ReadOnly=true。
+
+Update_Memo->ScrollBars=ssBoth。
+```
