@@ -8,7 +8,10 @@
   + 目標WMI命令: Get-WMIObject
   + 目標CIM命令: Get-CimInstance
 + 檢查所有命令
-
 ```
 PowerShell "Get-Command"
+```
++ 檢查符合名稱的命令(Get-WMIObject)
+```
+PowerShell "Get-Command -Name Get-WMIObject"
 ```
