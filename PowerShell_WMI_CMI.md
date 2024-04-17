@@ -23,7 +23,9 @@ PowerShell "Get-Command -Name Get-WMIObject | Select-Object Name"
 ```
 PowerShell "Get-Command -Name Get-WMIObject | Select-Object Name | Format-List"
 ```
-
++ 接下來透過對內容的檢查就可以知道「Get-WMIObject」命令能不能用。
+  + 能用的話就是會顯示名稱
+  + 不能用的話就是沒有任何內容顯示。
 
 # 取得作業系統版本
 ### 精簡
