@@ -78,7 +78,7 @@ PowerShell "Get-Command | Where-Object { $_.name -eq 'Get-CimInstance' } | Selec
   ```
   PowerShell "Get-CimInstance -Class Win32_OperatingSystem | Format-List *"
   ```
-### 只顯示Caption內容
+### 只顯示「Caption」內容
 + Get-WMIObject:
   ```
   PowerShell "Get-WMIObject -Class Win32_OperatingSystem | Select-Object Caption | Format-List"
@@ -87,8 +87,17 @@ PowerShell "Get-Command | Where-Object { $_.name -eq 'Get-CimInstance' } | Selec
   ```
   PowerShell "Get-CimInstance -Class Win32_OperatingSystem | Select-Object Caption | Format-List"
   ```
-### 顯示版本
-PowerShell "Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object Version"
+### 只顯示「Version」內容
++ Get-WMIObject:
+  ```
+  PowerShell "Get-WMIObject -Class Win32_OperatingSystem | Select-Object Version | Format-List"
+  ```
++ Get-CimInstance:
+  ```
+  PowerShell "Get-CimInstance -Class Win32_OperatingSystem | Select-Object Version | Format-List"
+  ```
+
+<br>
 
 
 # 取得COM Ports 裝置
