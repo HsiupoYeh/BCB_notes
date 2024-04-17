@@ -49,7 +49,7 @@
 >> (5.1.2) 檢查「Form1」的「properties」頁面下「BorderStyle」為「bsSizeable」。  
 >>> (5.1.2.1) 說明:設定窗體的樣式。可依需求嘗試不同風格決定是否符合需求。  
 
->> (5.1.2) 設定「Form1」的「properties」頁面下「Caption」為「ERT資料編輯小工具」。  
+>> (5.1.2) 設定「Form1」的「properties」頁面下「Caption」為「ComPortsList小工具」。  
 >>> (5.1.2.1) 說明:設定窗體的標題列文字。
 
 >> (5.1.3) 設定「Form1」的「properties」頁面下「Color」為「clWindow」。  
