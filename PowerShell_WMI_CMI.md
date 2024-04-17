@@ -54,7 +54,7 @@ PowerShell "Get-Command | Where-Object { $_.name -eq 'Get-CimInstance' } | Selec
 ### 預設資訊(非全部)
 + Get-WMIObject:
   ```
-  PowerShell "Get-WMIObject -ClassName Win32_OperatingSystem"
+  PowerShell "Get-WMIObject | Where-Object { $_.classname -eq 'Win32_OperatingSystem' }"
   ```
 + Get-CimInstance:
   ```
