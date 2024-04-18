@@ -238,3 +238,9 @@
 	}
 	//-----------------------------------------------------------------
      ```
++ 時間相關
+  ```cpp
+  //格式化輸出當下時間:
+  //FormatDateTime("yyyy/mm/dd HH:MM:SS" ,Now());
+  Memo1->Lines->Add(FormatDateTime("yyyy/mm/dd HH:MM:SS" ,Now()));
+  ```
