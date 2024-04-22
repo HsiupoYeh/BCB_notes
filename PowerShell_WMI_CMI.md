@@ -145,3 +145,10 @@ PowerShell "Get-Command | Where-Object { $_.name -eq 'Get-CimInstance' } | Selec
   ```
   PowerShell "Get-CimInstance -Class Win32_PnPEntity | Where-Object { $_.pnpclass -Match 'Ports' } | Select-Object Name,Caption | Format-List"
   ```
+
+# Get-Process
+### 只查看「Name」，並調整顯示模式(key : value模式)
++ Get-Process:
+  ```
+  PowerShell "Get-Process  | Where-Object { $_.name -Match 'explorer' } | Select-Object Name |Format-List *"
+  ```
