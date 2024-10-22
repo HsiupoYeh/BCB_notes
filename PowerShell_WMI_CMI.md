@@ -29,6 +29,10 @@ PowerShell "Get-Command | Where-Object { $_.name -eq 'Get-WMIObject' } | Select-
 ```
 PowerShell "Get-Command | Where-Object { $_.name -eq 'Get-WMIObject' } | Select-Object Name | Format-List"
 ```
++ 檢查符合「Name」的命令(Get-WMIObject)，並且只找「Name」的內容，再調整顯示模式(精簡JSON模式)
+```
+PowerShell "Get-Command | Where-Object { $_.name -eq 'Get-WMIObject' } | Select-Object Name | Format-List | ConvertTo-Json -Compress"
+```
 + 接下來透過對內容的檢查就可以知道「Get-WMIObject」命令能不能用。
   + 能用的話就是會顯示名稱
   + 不能用的話就是沒有任何內容顯示。
