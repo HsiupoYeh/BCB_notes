@@ -147,13 +147,20 @@ PowerShell "Get-Command | Where-Object { $_.name -eq 'Get-CimInstance' } | Selec
 ### 只查看「Name」與「Caption」，並調整顯示模式(key : value模式)
 + Get-WMIObject:
   ```
-  PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.pnpclass -Match 'Ports' } | Select-Object Name,Caption | Format-List"
+  PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.pnpclass -Match 'Ports' } | Select-Object Name,Caption | Format-List | ConvertTo-Json -Compress"
   ```
 + Get-CimInstance:
   ```
-  PowerShell "Get-CimInstance -Class Win32_PnPEntity | Where-Object { $_.pnpclass -Match 'Ports' } | Select-Object Name,Caption | Format-List"
+  PowerShell "Get-CimInstance -Class Win32_PnPEntity | Where-Object { $_.pnpclass -Match 'Ports' } | Select-Object Name,Caption | Format-List | ConvertTo-Json -Compress"
   ```
+##
 
+<br>
+
+## 範例 - 取得DMM裝置(USB Test and Measurement Device (IVI))
+```
+PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.description -Match 'USB Test and Measurement Device (IVI)' } | Select-Object Caption,DeviceID | Format-List | ConvertTo-Json -Compress"
+```
 # Get-Process
 ### 只查看「Name」，並調整顯示模式(key : value模式)
 + Get-Process:
