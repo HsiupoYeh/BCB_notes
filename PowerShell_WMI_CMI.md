@@ -147,7 +147,7 @@ PowerShell "Get-Command | Where-Object { $_.name -eq 'Get-CimInstance' } | Selec
 ### 只查看「Name」與「Caption」，並調整顯示模式(key : value模式)
 + Get-WMIObject:
   ```
-  PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.pnpclass -Match 'Ports' } | Select-Object Name,Caption | Format-List | ConvertTo-Json -Compress"
+  PowerShell "Get-CimInstance -Class Win32_PnPEntity | Select-Object -Property Name | Where-Object { $_.Name -match 'CH340' } | ConvertTo-Json -Compress" 
   ```
 + Get-CimInstance:
   ```
