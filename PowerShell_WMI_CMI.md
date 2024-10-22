@@ -12,6 +12,10 @@
 ```
 PowerShell "Get-Command"
 ```
+
+```
+| ConvertTo-Json -Compress
+```
 #### Get-WMIObject
 + 使用Where-Object檢查符合「Name」的命令(Get-WMIObject)
 ```
