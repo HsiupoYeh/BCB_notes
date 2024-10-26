@@ -167,3 +167,25 @@ PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.description
   ```
   PowerShell "Get-Process  | Where-Object { $_.name -Match 'explorer' } | Select-Object Name |Format-List *"
   ```
+
+## 範例 - 取得儲存裝置空間(主要目標是磁碟名稱和磁碟代號)
+### 預設資訊(非全部)
++ Get-Volume:
+  ```
+  PowerShell "Get-Volume"
+  ```
+### 只選擇「DriveLetter」、「FileSystemLabel」與「DriveType」物件
++ Get-Volume:
+  ```
+  PowerShell "Get-Volume | Select-Object DriveLetter,FileSystemLabel,DriveType"
+  ```
+### 只選擇「DriveLetter」、「FileSystemLabel」與「DriveType」物件，並且DriveLetter不是空的
++ Get-Volume:
+  ```
+  PowerShell "Get-Volume | Select-Object DriveLetter,FileSystemLabel,DriveType | Where-Object {$_.DriveLetter -ne $null}"
+  ```
+### 只選擇「DriveLetter」、「FileSystemLabel」與「DriveType」物件，並且DriveLetter不是空的，DriveType不是「Fixed」。
++ Get-Volume:
+  ```
+  PowerShell "Get-Volume | Select-Object DriveLetter,FileSystemLabel,DriveType | Where-Object {$_.DriveLetter -ne $null} | Where-Object {$_.DriveType -ne 'Fixed'}"
+  ```
