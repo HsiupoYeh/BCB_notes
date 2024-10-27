@@ -189,3 +189,19 @@ PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.description
   ```
   PowerShell "Get-Volume | Select-Object DriveLetter,FileSystemLabel,DriveType | Where-Object {$_.DriveLetter -ne $null} | Where-Object {$_.DriveType -ne 'Fixed'}"
   ```
+
+
+### DMM
+```
+PowerShell "Get-WMIObject -Class Win32_PnPEntity"
+```
+```
+PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -Match 'USBTestAndMeasurementDevice'}"
+```
+```
+PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -Match 'USBTestAndMeasurementDevice'} | Select-Object PNPClass,PNPDeviceID"
+```
+```
+PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -Match 'USBTestAndMeasurementDevice'} | Select-Object PNPClass,PNPDeviceID | ConvertTo-Json -Compress"
+```
+
