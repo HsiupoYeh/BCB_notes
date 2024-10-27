@@ -206,7 +206,9 @@ PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -M
 ```
 PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -Match 'Ports'} | Where-Object { $_.Name -Match 'CH340'} | Select-Object Name"
 ```
-
+```
+PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -Match 'Ports'} | Where-Object { $_.Name -Match 'CH340'} | Select-Object Name | ConvertTo-Json -Compress"
+```
 ### DMM
 ```
 PowerShell "Get-WMIObject -Class Win32_PnPEntity"
