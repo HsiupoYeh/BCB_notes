@@ -190,7 +190,19 @@ PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.description
   PowerShell "Get-Volume | Select-Object DriveLetter,FileSystemLabel,DriveType | Where-Object {$_.DriveLetter -ne $null} | Where-Object {$_.DriveType -ne 'Fixed'}"
   ```
 
-
+### SwitchArray
+```
+PowerShell "Get-WMIObject -Class Win32_PnPEntity"
+```
+```
+PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -Match 'Ports'}"
+```
+```
+PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.Name -Match 'CH340'}"
+```
+```
+PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -Match 'Ports' | Where-Object { $_.Name -Match 'CH340'}"
+```
 ### DMM
 ```
 PowerShell "Get-WMIObject -Class Win32_PnPEntity"
