@@ -203,6 +203,10 @@ PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.Name -Match
 ```
 PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -Match 'Ports'} | Where-Object { $_.Name -Match 'CH340'}"
 ```
+```
+PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -Match 'Ports'} | Where-Object { $_.Name -Match 'CH340'} | Select-Object Name"
+```
+
 ### DMM
 ```
 PowerShell "Get-WMIObject -Class Win32_PnPEntity"
