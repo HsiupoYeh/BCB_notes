@@ -225,3 +225,22 @@ PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -M
 ```
 PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -Match 'USBTestAndMeasurementDevice'} | Select-Object PNPDeviceID | ConvertTo-Json -Compress"
 ```
+### PSU
+```
+PowerShell "Get-WMIObject -Class Win32_PnPEntity"
+```
+```
+PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -Match 'Ports'}"
+```
+```
+PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.Name -Match 'CP210x'}"
+```
+```
+PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -Match 'Ports'} | Where-Object { $_.Name -Match 'CP210x'}"
+```
+```
+PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -Match 'Ports'} | Where-Object { $_.Name -Match 'CP210x'} | Select-Object Name"
+```
+```
+PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -Match 'Ports'} | Where-Object { $_.Name -Match 'CP210x'} | Select-Object Name | ConvertTo-Json -Compress"
+```
