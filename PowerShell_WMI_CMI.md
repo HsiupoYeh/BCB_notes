@@ -204,4 +204,6 @@ PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -M
 ```
 PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -Match 'USBTestAndMeasurementDevice'} | Select-Object PNPClass,PNPDeviceID | ConvertTo-Json -Compress"
 ```
-
+```
+PowerShell "Get-WMIObject -Class Win32_PnPEntity | Where-Object { $_.PNPClass -Match 'USBTestAndMeasurementDevice'} | Select-Object PNPDeviceID | ConvertTo-Json -Compress"
+```
